@@ -1,0 +1,102 @@
+[
+  {
+    "id": "BTL001",
+    "brand": "AquaFresh",
+    "size_ml": 500,
+    "material": "plastic",
+    "color": "blue",
+    "price_usd": 1.99,
+    "price_bdt": 169.31,
+    "image_url": "https://i.postimg.cc/rmW4mcPP/pexels-gabriel-peter-1188649-1.png"
+  },
+  {
+    "id": "BTL002",
+    "brand": "PureFlow",
+    "size_ml": 750,
+    "material": "glass",
+    "color": "clear",
+    "price_usd": 3.49,
+    "price_bdt": 296.81,
+    "image_url": "https://i.postimg.cc/wxRjd3Yg/steinar-engeland-cs-QEHjxz8-VU-unsplash-1.png"
+  },
+  {
+    "id": "BTL003",
+    "brand": "EcoPure",
+    "size_ml": 1000,
+    "material": "recycled plastic",
+    "color": "green",
+    "price_usd": 2.99,
+    "price_bdt": 254.78,
+    "image_url": "https://i.postimg.cc/rmW4mcPP/pexels-gabriel-peter-1188649-1.png"
+  },
+  {
+    "id": "BTL004",
+    "brand": "HydraMax",
+    "size_ml": 500,
+    "material": "stainless steel",
+    "color": "silver",
+    "price_usd": 5.99,
+    "price_bdt": 509.56,
+    "image_url": "https://i.postimg.cc/wxRjd3Yg/steinar-engeland-cs-QEHjxz8-VU-unsplash-1.png"
+  },
+  {
+    "id": "BTL005",
+    "brand": "FrostWave",
+    "size_ml": 1000,
+    "material": "plastic",
+    "color": "white",
+    "price_usd": 2.49,
+    "price_bdt": 211.86,
+    "image_url": "https://i.postimg.cc/rmW4mcPP/pexels-gabriel-peter-1188649-1.png"
+  },
+  {
+    "id": "BTL006",
+    "brand": "CrystalClear",
+    "size_ml": 750,
+    "material": "glass",
+    "color": "transparent",
+    "price_usd": 3.99,
+    "price_bdt": 339.16,
+    "image_url": "https://i.postimg.cc/rmW4mcPP/pexels-gabriel-peter-1188649-1.png"
+  },
+  {
+    "id": "BTL007",
+    "brand": "EcoEssence",
+    "size_ml": 500,
+    "material": "biodegradable plastic",
+    "color": "green",
+    "price_usd": 2.29,
+    "price_bdt": 194.79,
+    "image_url": "https://i.postimg.cc/rmW4mcPP/pexels-gabriel-peter-1188649-1.png"
+  },
+  {
+    "id": "BTL008",
+    "brand": "HydroChill",
+    "size_ml": 750,
+    "material": "aluminum",
+    "color": "blue",
+    "price_usd": 4.99,
+    "price_bdt": 424.69,
+    "image_url": "https://i.postimg.cc/rmW4mcPP/pexels-gabriel-peter-1188649-1.png"
+  },
+  {
+    "id": "BTL009",
+    "brand": "NatureNest",
+    "size_ml": 1000,
+    "material": "glass",
+    "color": "brown",
+    "price_usd": 3.79,
+    "price_bdt": 322.45,
+    "image_url": "https://i.postimg.cc/rmW4mcPP/pexels-gabriel-peter-1188649-1.png"
+  },
+  {
+    "id": "BTL010",
+    "brand": "FreshFusion",
+    "size_ml": 500,
+    "material": "plastic",
+    "color": "red",
+    "price_usd": 1.79,
+    "price_bdt": 152.36,
+    "image_url": "https://i.postimg.cc/rmW4mcPP/pexels-gabriel-peter-1188649-1.png"
+  }
+]
