@@ -1,6 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/jsx-key */
 import { useEffect, useState } from "react";
 import Bottle from "./Bottle";
+import { addToLS, getStoredCart } from "./utilities/localStorage.js";
 
 const Botles = () => {
   const [bottles, setBottles] = useState([]);
@@ -10,12 +12,21 @@ const Botles = () => {
       .then((res) => res.json())
       .then((data) => setBottles(data));
   }, []);
+  // load cart from local storage =>
+  useEffect(() => {
+    console.log("callled the useEffects", bottles.length);
+    if (bottles.length > 0) {
+      const storedCart = getStoredCart();
+      console.log(storedCart);
+    }
+  }, [bottles]);
+
   const [cart, setCart] = useState([]);
   const handeAdToCart = (btlInfo) => {
     const updateInfo = [...cart, btlInfo];
     setCart(updateInfo);
+    addToLS(btlInfo.id);
   };
-  
 
   return (
     <>
@@ -48,7 +59,9 @@ const Botles = () => {
             {" "}
             <h4 className="text-lg font-bold">Product list:</h4>
             <ol>
-             {cart.map(cd=>    <li> {cd.brand}  </li> )}
+              {cart.map((cd) => (
+                <li> {cd.brand} </li>
+              ))}
             </ol>
           </div>
         </div>
@@ -56,7 +69,11 @@ const Botles = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-center justify-center container mx-auto">
         {bottles.map((btl) => (
-          <Bottle  handeAdToCart={handeAdToCart}  key={btl.id} bottle={btl}></Bottle>
+          <Bottle
+            handeAdToCart={handeAdToCart}
+            key={btl.id}
+            bottle={btl}
+          ></Bottle>
         ))}
       </div>
     </>

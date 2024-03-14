@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import addToLS from "./utilities/localStorage";
+
 const Bottle = ({ bottle, handeAdToCart }) => {
   const { brand, color, image_url, material, price_bdt, price_usd, size_ml } =
     bottle;
-  console.log(bottle);
+  // console.log(bottle);
   return (
     <div className="bg-blue-200 rounded-lg p-10">
       {/* image contianer */}
@@ -31,10 +31,7 @@ const Bottle = ({ bottle, handeAdToCart }) => {
           Purchase
         </button>
 
-        <button
-          onClick={() => addToLS(bottle)}
-          className="py-3 px-5 bg-purple-700 rounded-lg my-3 text-white font-bold capitalize"
-        >
+        <button className="py-3 px-5 bg-purple-700 rounded-lg my-3 text-white font-bold capitalize">
           {" "}
           add to cart
         </button>

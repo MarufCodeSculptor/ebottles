@@ -6,11 +6,11 @@ const getStoredCart = () => {
     return [];
   }
 };
-const addToLS = (cd) => {
+const addToLS = (id) => {
   const cart = getStoredCart();
-  cart.push(cd);
+  cart.push(id);
   //   save to local storage =>
  localStorage.setItem('cart',JSON.stringify(cart))
 };
 
-export default addToLS;
+export {addToLS,getStoredCart};

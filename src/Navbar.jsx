@@ -13,7 +13,7 @@ function Navbar() {
       <div className="container mx-auto flex justify-between items-center">
         <div>
           <a href="#" className="text-white text-lg font-semibold">
-            eBottles.com
+            eBottles.com //
           </a>
         </div>
         <div className="hidden md:flex space-x-4">
