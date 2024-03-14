@@ -3,10 +3,14 @@
 import { useEffect, useState } from "react";
 import Bottle from "./Bottle";
 import { addToLS, getStoredCart } from "./utilities/localStorage.js";
+import Cart from "./Cart.jsx";
 
 const Botles = () => {
+  // cart and bottle state start here ----
   const [bottles, setBottles] = useState([]);
-
+  const [cart, setCart] = useState([]);
+  // cart and bolte state end here ---------
+  // fetching  all bottles data  ------------
   useEffect(() => {
     fetch("./fakebottles.json")
       .then((res) => res.json())
@@ -14,14 +18,19 @@ const Botles = () => {
   }, []);
   // load cart from local storage =>
   useEffect(() => {
-    console.log("callled the useEffects", bottles.length);
     if (bottles.length > 0) {
-      const storedCart = getStoredCart();
-      console.log(storedCart);
+      const storedCartids = getStoredCart();
+      const cartItems = [];
+      for (const id of storedCartids) {
+        const botle = bottles.find((btl) => btl.id === id);
+        if (botle) {
+          cartItems.push(botle);
+        }
+      }
+      setCart(cartItems);
     }
   }, [bottles]);
 
-  const [cart, setCart] = useState([]);
   const handeAdToCart = (btlInfo) => {
     const updateInfo = [...cart, btlInfo];
     setCart(updateInfo);
@@ -30,9 +39,9 @@ const Botles = () => {
 
   return (
     <>
-      {/* heading */}
-      <div>
-        <h2 className="text-2xl font-bold border-2 p-5">
+      {/* total bottles --------- */}
+      <div className="">
+        <h2 className="text-2xl text-center bg-purple-600 text-white font-bold  p-5">
           {" "}
           Total Bottles:{" "}
           <span className="text-2xl font-extrabold">
@@ -44,37 +53,24 @@ const Botles = () => {
       <hr />
 
       {/* cart === */}
-      <div className="container bg-purple-200 mx-auto">
-        <h2 className="text-xl capitalize font-bold text-center px-10 py-5">
-          {" "}
-          Total Product:{" "}
-          <span className="font-extrabold text-2xl"> {cart.length} </span>{" "}
-        </h2>
-        <h3 className="text-2xl text-center">
-          Total price: <span className="font-bold">123456</span>
-        </h3>
-        {/* cart details -------------- */}
-        <div className="flex items-center justify-center">
-          <div className="border  bg-blue-100 p-10 rounded">
-            {" "}
-            <h4 className="text-lg font-bold">Product list:</h4>
-            <ol>
-              {cart.map((cd) => (
-                <li> {cd.brand} </li>
-              ))}
-            </ol>
+
+      {/*  -------------------------all bottles container start here ----------------------- */}
+      <div className="flex items-start gap-5 justify-center">
+        <div className="lg:w-7/12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 items-center justify-center">
+            {bottles.map((btl) => (
+              <Bottle
+                handeAdToCart={handeAdToCart}
+                key={btl.id}
+                bottle={btl}
+              ></Bottle>
+            ))}
           </div>
         </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-center justify-center container mx-auto">
-        {bottles.map((btl) => (
-          <Bottle
-            handeAdToCart={handeAdToCart}
-            key={btl.id}
-            bottle={btl}
-          ></Bottle>
-        ))}
+        <div className="w-3/12">
+          {/* cart sit here   */}
+          <Cart cart={cart}></Cart>
+        </div>
       </div>
     </>
   );

@@ -6,7 +6,7 @@ function App() {
     <>
       <Navbar></Navbar>
       {
-        <div className="border-2 border-red-500">
+        <div>
           <Botles></Botles>
         </div>
       }
